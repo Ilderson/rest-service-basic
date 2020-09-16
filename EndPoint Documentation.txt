@@ -1,0 +1,64 @@
+# WS Busca de Usuario:
+Metodo: Get
+
+findAll:
+Endpoint: http://localhost:8080/usuarios/
+
+FindById:
+Endpoint: http://localhost:8080/usuarios/findById
+Parameters: ?userId=3446
+Example: http://localhost:8080/usuarios/findById?userId=3446
+
+findByEmail:
+Endpoint: http://localhost:8080/usuarios/findByEmail
+Parameters: ?email=userCompany5@email.com
+Example: http://localhost:8080/usuarios/findByEmail?email=userCompany5@email.com
+
+FincByCompanyId
+Endpoint: http://localhost:8080/usuarios/findByCompanyId
+Parameters: ?companyId=5
+Example: http://localhost:8080/usuarios/findByCompanyId?companyId=5
+
+# WS Create Usuario
+Metodo: POST
+Endpoint: http://localhost:8080/usuarios
+Request: json
+{
+	"companyId": <int value>,
+    "email": <"email value">,
+    "birthDate":<"string date format: dd/mm/yyyy">,
+    "dataNiver":<"string date format: dd/mm/yyyy">
+}
+
+Example:
+{
+	"companyId":10,
+    "email":"ilderson@acme.com",
+    "birthDate":"11/10/1980",
+    "dataNiver":"11/10/1980"
+}
+
+# WS Update Usuario
+Metodo: PUT
+Endpoint: http://localhost:8080/usuarios/<userId>
+Request: json
+{
+	"companyId": <int value>,
+    "email": <"email value">,
+    "birthDate":<"string date format: dd/mm/yyyy">,
+    "dataNiver":<"string date format: dd/mm/yyyy">
+}
+
+Example: http://localhost:8080/usuarios/3457
+{
+	"companyId":10,
+    "email":"ilderson.nogueira@teste.com",
+    "birthDate":"55/10/1980",
+    "dataNiver":"11/10/2000"
+}
+
+# WS Delete Usuario
+Metodo: DELETE
+Endpoint: http://localhost:8080/usuarios/<userId>
+
+Example: http://localhost:8080/usuarios/3458
